@@ -68,5 +68,8 @@ A: Yes! Just rename or modify the launch command in entrypoint.sh.
 
 🧼 To Clean Up
 ```bash
-docker compose down
+sudo docker system prune -a --volumes -f # clean up unused Docker resources
+sudo docker-compose down --volumes  # optional cleanup
+sudo docker-compose build --no-cache
+sudo docker-compose up
 ```
