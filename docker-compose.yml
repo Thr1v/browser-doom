@@ -1,0 +1,13 @@
+version: '3'
+services:
+  chocolate-doom:
+    build: .
+    ports:
+      - "6080:6080"
+      - "5900:5900"  # VNC server
+    volumes:
+      - .:/data
+    environment:
+      - DISPLAY=:0
+    tty: true
+    privileged: true  # needed for I/O permissions (e.g., OPL sound emulation)
